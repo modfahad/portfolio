@@ -796,10 +796,6 @@ main {
   filter: grayscale(0);
 }
 
-/**
- * education and experience 
- */
-
 .timeline {
   margin-bottom: 30px;
 }
@@ -880,6 +876,24 @@ main {
   margin-bottom: 15px;
 }
 
+.skill-card {
+  display: flex;
+  align-items: center;
+  background: var(--border-gradient-onyx);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+  margin-bottom: 10px;
+}
+
+.skill-card .skill-icon {
+  margin-right: 10px;
+}
+
+.skill-card .skill-header {
+  margin-bottom: 0;
+}
+
 .skill .title-wrapper {
   display: flex;
   align-items: center;
@@ -901,7 +915,7 @@ main {
 .skill-header {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .skill-progress-bg {
@@ -958,6 +972,11 @@ main {
 
 .skill p {
   color: var(--white-2);
+  margin-left: 30px;
+}
+
+.skill-content p {
+  margin-left: 50px;
 }
 
 .skills-item:not(:last-child)::after {
@@ -1614,10 +1633,6 @@ textarea.form-input::-webkit-resizer {
     min-width: calc(33.33% - 35px);
   }
 
-  /**
-   * #RESUME
-   */
-
   .timeline-list {
     margin-left: 65px;
   }
@@ -2027,10 +2042,6 @@ textarea.form-input::-webkit-resizer {
     justify-content: center;
   }
 
-  /**
-	 * RESUME
-	 */
-
   .timeline-text {
     max-width: 700px;
   }
@@ -2046,6 +2057,10 @@ textarea.form-input::-webkit-resizer {
 .star-bullets li {
   position: relative;
   padding-left: 1.2em;
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
 }
 
 .star-bullets li::before {
@@ -2094,4 +2109,26 @@ textarea.form-input::-webkit-resizer {
   padding: 60px 0;
   font-size: 1.5em;
   color: var(--teal-active);
+}
+
+.certificate-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.certificates .star-bullets {
+  margin-left: 20px;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.certificates .star-bullets li {
+  padding-left: 1.2em;
+  margin-bottom: 0.2em;
+}
+
+.certificates .skills-item:not(:last-child) {
+  margin-bottom: 25px;
 }
