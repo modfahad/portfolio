@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vCard - Personal Portfolio</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/my-avatar.png"
+              alt="Mohammed Fahad"
+              width="50"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Mohammed Fahad">Mohammed Fahad</h1>
+
+            <p class="title">Senior Backend Developer</p>
+          </div>
+
+          <button class="info-more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info-more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:mhdfahad18@gmail.com" class="contact-link"
+                  >mhdfahad18@gmail.com</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+918904171848" class="contact-link"
+                  >+91 8904171848</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+
+                <time datetime="1982-06-23">18 March 1997</time>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Bangalore, India</address>
+              </div>
+            </li>
+          </ul>
+
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://www.linkedin.com/in/meetmhdfahad/"
+                class="social-link"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn profile"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a
+                href="https://github.com/modfahad/"
+                class="social-link"
+                target="_blank"
+                rel="noopener"
+                title="GitHub profile"
+              >
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="main-content">
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Blog</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              Dedicated and results-oriented Software Engineer with over 5 years
+              of experience in backend development, specializing in system
+              architecture, scalable solutions, and project management.
+              Proficient in leading and executing complex projects with a focus
+              on innovative use of technologies such as NodeJS, TypeScript, and
+              AWS. Demonstrated success in improving systems through meticulous
+              development and strategic enhancements, particularly in secure,
+              high-demand environments. Actively seeking opportunities to
+              leverage expertise in tech leadership and hands-on development to
+              drive business efficiency and innovation.
+            </p>
+
+            <p>
+              My job is to build your website so that it is functional and
+              user-friendly but at the same time attractive. Moreover, I add
+              personal touch to your product and make sure that is eye-catching
+              and easy to use. My aim is to bring across your message and
+              identity in the most creative way. I created web design for many
+              famous brand companies.
+            </p>
+          </section>
+
+          <section class="service">
+            <h3 class="h3 service-title">What i'm doing</h3>
+
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-design.svg
+                "
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Build Scalable Backend Systems
+                  </h4>
+
+                  <p class="service-item-text">
+                    Design and develop secure, high-performance backend
+                    architectures using Node.js, TypeScript, and microservice
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-team.svg"
+                    alt="Web development icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Lead Engineering Teams</h4>
+
+                  <p class="service-item-text">
+                    Guide small teams through full development cycles—from
+                    planning and architecture to deployment and support.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-performance.svg"
+                    alt="mobile app icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Optimize System Performance
+                  </h4>
+
+                  <p class="service-item-text">
+                    Improve application speed, reliability, and maintainability
+                    through code reviews, error handling, and refactoring.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-automate.svg"
+                    alt="camera icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Integrate and Automate Services
+                  </h4>
+
+                  <p class="service-item-text">
+                    Connect systems with payment gateways, messaging services,
+                    and CRMs, using reliable, automated data flows.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Senior Software Development Engineer
+                </h4>
+                <span>May 2024 — Present</span>
+                <p class="timeline-text">
+                  CodeVyasa (Client: QNu Labs) | Bangalore, India<br />
+                </p>
+                <ul class="star-bullets">
+                  <li>
+                    <p class="timeline-text">
+                      Led a team of 4 members to architect and develop the
+                      backend for Quantum Key Distribution Networks (QDKN), the
+                      first of its kind, primarily for defense applications.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Architected and developed a full-scale application for
+                      managing systems such as multi-level user access
+                      management, nodes, links, and service links (Apps) in a
+                      high-security environment, incorporating 5 levels of role
+                      control, analytics, device configuration, and handling
+                      over 50 event types.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Utilized TypeScript with NestJS for backend development,
+                      Postgres with Prisma for database management,
+                      ElasticSearch and Kibana for logging, Redis for caching,
+                      and Kafka for secure node communication.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Deployed an on-premise solution using VMs and Docker
+                      containers, operating entirely within an intranet to meet
+                      defense sector security requirements.
+                    </p>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">SDE 2</h4>
+                <span>January 2022 — August 2023</span>
+                <p class="timeline-text">
+                  Kenko Health | Bangalore, India<br />
+                </p>
+                <ul class="star-bullets">
+                  <li>
+                    <p class="timeline-text">
+                      Spearheaded the migration from monolithic to microservice
+                      architecture, enhancing scalability, efficiency, agility,
+                      fault isolation, deployment frequency, and system
+                      availability.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Designed and implemented HR portal microservices for B2B
+                      clients, processing over 10K records at a time with robust
+                      retries, audit logs, and fallbacks.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Developed a versatile payment module incorporating
+                      multiple payment gateways such as JusPay and Razorpay,
+                      managing over 1k+ transactions daily with robust retries
+                      and audit logs.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Facilitated over 5K+ API calls between backend systems and
+                      CRM (HubSpot) for seamless data synchronization.
+                    </p>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Software Engineer</h4>
+                <span>July 2019 — January 2022</span>
+                <p class="timeline-text">
+                  Intugine Technologies Pvt Ltd | Bangalore, India<br />
+                </p>
+                <ul class="star-bullets">
+                  <li>
+                    <p class="timeline-text">
+                      Led the development of India's top Transportation
+                      Management System (TMS) for parcel solutions, serving 75+
+                      clients.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Created a highly efficient shipment tracking engine from
+                      scratch, managing the daily tracking of 100K+ shipments.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="timeline-text">
+                      Reduced ticket resolution time by 60% and decreased ticket
+                      volume by 80%, through the development of a Control Tower.
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">MTech (Software Systems)</h4>
+                <span>2021 — 2023</span>
+                <p class="timeline-text">
+                  Birla Institute of Technology<br />
+                  Work Integrated Learning Programmes (WILP) | Bangalore, India
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  BE (Information Science and Engineering)
+                </h4>
+                <span>2015 — 2019</span>
+                <p class="timeline-text">
+                  Vemana Institute Of Technology<br />
+                  Bangalore, India
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="skill">
+            <h3 class="h3 skills-title">My Skills</h3>
+            <ul class="skills-list content-card">
+              <li class="skills-item">
+                <span class="skill-icon"
+                  ><ion-icon name="logo-javascript"></ion-icon
+                ></span>
+                <div class="skill-content">
+                  <div class="skill-header">
+                    <h5 class="h5">Programming Languages</h5>
+                  </div>
+                  <p>TypeScript, JavaScript, Python</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <span class="skill-icon"
+                  ><ion-icon name="code-slash"></ion-icon
+                ></span>
+                <div class="skill-content">
+                  <div class="skill-header">
+                    <h5 class="h5">Frameworks & Libraries</h5>
+                  </div>
+                  <p>NestJS, ExpressJS, Ts.Ed, WebSockets</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <span class="skill-icon"
+                  ><ion-icon name="server-outline"></ion-icon
+                ></span>
+                <div class="skill-content">
+                  <div class="skill-header">
+                    <h5 class="h5">Databases & ORMs</h5>
+                  </div>
+                  <p>MongoDB, PostgreSQL, Redis, Prisma</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <span class="skill-icon"
+                  ><ion-icon name="cloud-outline"></ion-icon
+                ></span>
+                <div class="skill-content">
+                  <div class="skill-header">
+                    <h5 class="h5">Cloud Services</h5>
+                  </div>
+                  <p>
+                    AWS (EC2, S3, ElasticCache, Lambda, ECS, ECR, SQS, SNS,
+                    CloudWatch)
+                  </p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <span class="skill-icon"
+                  ><ion-icon name="construct-outline"></ion-icon
+                ></span>
+                <div class="skill-content">
+                  <div class="skill-header">
+                    <h5 class="h5">DevOps & Tools</h5>
+                  </div>
+                  <p>Docker, GitLab, GitHub, Kafka, Kibana, ElasticSearch</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <span class="skill-icon"
+                  ><ion-icon name="card-outline"></ion-icon
+                ></span>
+                <div class="skill-content">
+                  <div class="skill-header">
+                    <h5 class="h5">Payment Services</h5>
+                  </div>
+                  <p>Razorpay, JusPay</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="blog" data-page="blog">
+          <header>
+            <h2 class="h2 article-title">Blog</h2>
+          </header>
+
+          <section class="blog-posts">
+            <div class="coming-soon-message">Coming Soon</div>
+          </section>
+        </article>
+
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2141583611376!2d77.64246547496422!3d13.015421113083192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae178b9c1be167%3A0x5e119ef2a0a14e5!2sHRBR%20Layout%2C%20Kalyan%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560043%2C%20India!5e0!3m2!1sen!2sin!4v1718198522799!5m2!1sen!2sin"
+                width="400"
+                height="300"
+                loading="lazy"
+                title="Google Map showing Bangalore, India"
+              ></iframe>
+            </figure>
+          </section>
+
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact Form</h3>
+
+            <form action="#" class="form" data-form>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="fullname"
+                  class="form-input"
+                  placeholder="Full name"
+                  required
+                  data-form-input
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email address"
+                  required
+                  data-form-input
+                />
+              </div>
+
+              <textarea
+                name="message"
+                class="form-input"
+                placeholder="Your Message"
+                required
+                data-form-input
+              ></textarea>
+
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
