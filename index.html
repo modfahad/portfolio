@@ -15,8 +15,163 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+
+      // Default consent state
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+      });
+
       gtag('js', new Date());
-      gtag('config', 'G-QRXK8B462L');
+      gtag('config', 'G-QRXK8B462L', {
+        consent_mode_enabled: true,
+      });
+    </script>
+
+    <!-- Consent Banner -->
+    <style>
+      .consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 1.5rem;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+        font-family: 'Poppins', sans-serif;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .consent-banner.visible {
+        display: block;
+        animation: slideUp 0.5s ease-out;
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      .consent-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .consent-text {
+        flex: 1;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #333;
+      }
+      .consent-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+      }
+      .consent-btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+      }
+      .accept-all {
+        background: #4caf50;
+        color: white;
+      }
+      .accept-all:hover {
+        background: #45a049;
+        transform: translateY(-1px);
+      }
+      .accept-essential {
+        background: #f5f5f5;
+        color: #333;
+      }
+      .accept-essential:hover {
+        background: #e8e8e8;
+      }
+      .cookie-icon {
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+      @media (max-width: 768px) {
+        .consent-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        .consent-buttons {
+          width: 100%;
+          justify-content: center;
+        }
+        .consent-btn {
+          padding: 0.6rem 1.2rem;
+        }
+      }
+    </style>
+
+    <div id="consent-banner" class="consent-banner">
+      <div class="consent-content">
+        <div class="consent-text">
+          <ion-icon name="cookie-outline" class="cookie-icon"></ion-icon>
+          We use cookies to enhance your browsing experience, serve personalized
+          content, and analyze our traffic. By clicking "Accept All", you
+          consent to our use of cookies for analytics and personalized ads. Read
+          our
+          <a
+            href="cookie-policy.html"
+            style="color: #4caf50; text-decoration: underline"
+            >Cookie Policy</a
+          >
+          for more information.
+        </div>
+        <div class="consent-buttons">
+          <button
+            class="consent-btn accept-essential"
+            onclick="acceptEssentialConsent()"
+          >
+            <ion-icon name="shield-checkmark-outline"></ion-icon>
+            Essential Only
+          </button>
+          <button class="consent-btn accept-all" onclick="acceptAllConsent()">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            Accept All
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Show consent banner if consent not given
+      if (!localStorage.getItem('consent-given')) {
+        document.getElementById('consent-banner').classList.add('visible');
+      }
+
+      function acceptAllConsent() {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+          ad_storage: 'granted',
+        });
+        localStorage.setItem('consent-given', 'all');
+        document.getElementById('consent-banner').classList.remove('visible');
+      }
+
+      function acceptEssentialConsent() {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied',
+          ad_storage: 'denied',
+        });
+        localStorage.setItem('consent-given', 'essential');
+        document.getElementById('consent-banner').classList.remove('visible');
+      }
     </script>
 
     <title>vCard - Mohammed Fahad Portfolio</title>
