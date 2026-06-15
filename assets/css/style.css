@@ -2207,7 +2207,7 @@ textarea.form-input::-webkit-resizer {
 
 @media (width >= 1024px) {
   .metrics-list {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
