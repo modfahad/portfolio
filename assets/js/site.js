@@ -47,8 +47,7 @@
     if (dur) dur.textContent = 'duration ' + years + 'y ' + months + 'm, still running';
 
     // One load moment: bars draw in when the trace first comes into view.
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduce && 'IntersectionObserver' in window) {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
       var io = new IntersectionObserver(
         function (entries) {
           if (entries[0].isIntersecting) {
@@ -83,6 +82,120 @@
       gtag('event', 'click', { event_category: parts[1] || 'Link', event_label: parts[0] });
     });
   });
+
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Live local time in Bangalore (IST).
+  var clock = document.querySelector('[data-clock]');
+  if (clock) {
+    var fmt = function () {
+      var parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      }).formatToParts(new Date());
+      var get = function (t) {
+        return parts.find(function (p) { return p.type === t; }).value;
+      };
+      clock.textContent = get('year') + '.' + get('month') + '.' + get('day') + ' | ' + get('hour') + ':' + get('minute');
+    };
+    fmt();
+    setInterval(fmt, 15000);
+  }
+
+  // Name decode: each glyph resolves like a key being agreed, once.
+  var nameEl = document.querySelector('[data-decode]');
+  if (nameEl) {
+    var target = nameEl.dataset.decode;
+    var status = document.querySelector('[data-key-status]');
+    var symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&';
+    var total = target.replace(/ /g, '').length;
+    nameEl.textContent = '';
+    var glyphs = [];
+    target.split(' ').forEach(function (word, wi) {
+      if (wi > 0) {
+        var gap = document.createElement('span');
+        gap.className = 'glyph glyph--space';
+        gap.setAttribute('aria-hidden', 'true');
+        gap.textContent = ' ';
+        nameEl.appendChild(gap);
+      }
+      var w = document.createElement('span');
+      w.className = 'word';
+      w.setAttribute('aria-hidden', 'true');
+      word.split('').forEach(function (ch) {
+        var span = document.createElement('span');
+        span.className = 'glyph';
+        span.textContent = reduceMotion ? ch : symbols[Math.floor(Math.random() * symbols.length)];
+        w.appendChild(span);
+        glyphs.push({ el: span, ch: ch });
+      });
+      nameEl.appendChild(w);
+    });
+    var settled = 0;
+    var finish = function () {
+      glyphs.forEach(function (g) {
+        if (g.ch !== ' ') {
+          g.el.textContent = g.ch;
+          g.el.classList.add('is-settled');
+        }
+      });
+      if (status) status.textContent = 'qkd://handshake ' + total + '/' + total + ' symbols, key agreed';
+    };
+    if (reduceMotion) {
+      finish();
+    } else {
+      var start = performance.now();
+      var tick = function (now) {
+        var elapsed = now - start;
+        settled = 0;
+        glyphs.forEach(function (g, i) {
+          if (g.ch === ' ') return;
+          var settleAt = 250 + i * 95;
+          if (elapsed >= settleAt) {
+            g.el.textContent = g.ch;
+            g.el.classList.add('is-settled');
+            settled++;
+          } else if (Math.random() < 0.35) {
+            g.el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+          }
+        });
+        if (status) status.textContent = 'qkd://handshake ' + settled + '/' + total + ' symbols';
+        if (settled < total) requestAnimationFrame(tick);
+        else finish();
+      };
+      requestAnimationFrame(tick);
+    }
+  }
+
+  // Current section name in the top bar, and the active dock icon.
+  var sectionLabel = document.querySelector('[data-current-section]');
+  var sections = document.querySelectorAll('[data-section]');
+  var dockLinks = document.querySelectorAll('[data-dock]');
+  if ('IntersectionObserver' in window && sections.length) {
+    var so = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var sec = entry.target;
+          if (sectionLabel) sectionLabel.textContent = sec.dataset.section;
+          dockLinks.forEach(function (a) {
+            var on = a.getAttribute('href') === '#' + sec.id;
+            a.classList.toggle('is-active', on);
+            if (on) a.setAttribute('aria-current', 'true');
+            else a.removeAttribute('aria-current');
+          });
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    sections.forEach(function (s) { so.observe(s); });
+  }
 
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();

@@ -15,19 +15,20 @@
       gtag('config', 'G-QRXK8B462L');
     </script>
 
-    <title>Mohammed Fahad – Backend Tech Lead (Node.js, Go, Kubernetes)</title>
+    <title>Mohammed Fahad – Backend Tech Lead (Node.js, Go, Kubernetes, IoT)</title>
     <meta
       name="description"
-      content="Backend tech lead with 6+ years building distributed systems: India's first quantum key distribution network, shipment tracking for 100K+ deliveries a day, and payment platforms. Bangalore, open to roles in India and the Gulf."
+      content="Backend tech lead with 6+ years building distributed systems: India's first quantum key distribution network, shipment tracking for 100K+ deliveries a day, and payments. After hours: ESP32 and e-ink hardware. Bangalore, open to roles in India and the Gulf."
     />
     <link rel="canonical" href="https://portfolio.mohammedfahad.com/" />
     <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
 
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Mohammed Fahad – Backend Tech Lead" />
     <meta
       property="og:description"
-      content="Distributed systems for defense-grade quantum networks, logistics at 100K+ shipments a day, and payments."
+      content="Distributed systems for defense-grade quantum networks, logistics at 100K+ shipments a day, payments, and an ESP32 e-ink reader built from scratch."
     />
     <meta property="og:url" content="https://portfolio.mohammedfahad.com/" />
     <meta property="og:image" content="https://portfolio.mohammedfahad.com/assets/images/avatar.png" />
@@ -35,7 +36,7 @@
 
     <link rel="icon" href="./assets/images/avatar.png" type="image/png" />
     <link rel="preload" href="./assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./assets/css/site.css" />
 
     <script type="application/ld+json">
@@ -49,7 +50,7 @@
         "email": "mailto:mhdfahad18@gmail.com",
         "url": "https://portfolio.mohammedfahad.com/",
         "sameAs": ["https://www.linkedin.com/in/meetmhdfahad/", "https://github.com/modfahad"],
-        "knowsAbout": ["Distributed systems", "Node.js", "TypeScript", "NestJS", "Go", "Kubernetes", "AWS", "PostgreSQL", "Kafka", "Redis"]
+        "knowsAbout": ["Distributed systems", "Node.js", "TypeScript", "NestJS", "Go", "Kubernetes", "AWS", "PostgreSQL", "Kafka", "ESP32", "IoT"]
       }
     </script>
   </head>
@@ -57,225 +58,226 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
 
-    <header class="topbar">
-      <div class="wrap topbar__inner">
-        <a class="topbar__name" href="#top">Mohammed Fahad</a>
-        <nav class="topbar__nav" aria-label="Sections">
-          <a href="#career">Career</a>
-          <a href="#work">Work</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a
-          class="btn btn--small"
-          href="./assets/docs/Mohammed_Fahad__Resume.pdf"
-          download
-          data-ga="Download CV|Top bar"
-          >Download CV</a
-        >
+    <!-- Framed top bar -->
+    <header class="bar">
+      <div class="bar__inner">
+        <span class="bar__section" data-current-section aria-live="polite">HOME</span>
+        <div class="bar__right">
+          <a class="connect" href="mailto:mhdfahad18@gmail.com" data-ga="Email|Top bar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" /></svg>
+            LETS_CONNECT
+          </a>
+          <div class="clock" aria-label="Local time in Bangalore">
+            <span class="clock__place">BANGALORE, KA // LOCAL_TIME</span>
+            <span class="clock__time" data-clock>IST</span>
+          </div>
+        </div>
       </div>
     </header>
 
     <main id="main">
       <!-- Hero -->
-      <section class="hero wrap" id="top">
-        <div class="hero__text">
-          <h1 class="hero__name">Mohammed Fahad</h1>
-          <p class="hero__lede">
-            I lead backend teams building systems that can't go down: India's first quantum key
-            distribution network, tracking for 100K+ shipments a day, and payments.
-          </p>
-          <p class="hero__meta">
-            Backend Tech Lead at QNu Labs in Bangalore. Open to lead roles in India and the Gulf.
-          </p>
-          <div class="hero__actions">
-            <a class="btn" href="mailto:mhdfahad18@gmail.com" data-ga="Email|Hero">Email me</a>
-            <a
-              class="btn btn--ghost"
-              href="./assets/docs/Mohammed_Fahad__Resume.pdf"
-              download
-              data-ga="Download CV|Hero"
-              >Download CV</a
-            >
+      <section class="hero" id="home" data-section="HOME">
+        <div class="hero__grid">
+          <div class="hero__intro">
+            <p class="hero__role">Backend tech lead and systems builder, based in Bangalore.</p>
+          </div>
+          <div class="hero__side">
+            <p>
+              I build backends that can't go down: India's first quantum key distribution network, tracking for
+              100K+ shipments a day, and payments. After hours, I build hardware.
+            </p>
+            <a class="panel-btn" href="#work">
+              <span>Explore work</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" /></svg>
+            </a>
+            <a class="panel-btn" href="./assets/docs/Mohammed_Fahad__Resume.pdf" download data-ga="Download CV|Hero">
+              <span>Download CV</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6z M14 2v6h6 M9 13h8 M9 17h8" /></svg>
+            </a>
           </div>
         </div>
-        <picture class="hero__avatar">
-          <source srcset="./assets/images/avatar.webp" type="image/webp" />
-          <img src="./assets/images/avatar.png" alt="Illustrated avatar of Mohammed Fahad" width="300" height="420" />
+
+        <picture class="hero__portrait">
+          <source srcset="./assets/images/avatar-dither.webp" type="image/webp" />
+          <img src="./assets/images/avatar-dither.png" alt="Dithered illustration of Mohammed Fahad" width="600" height="810" />
         </picture>
+
+        <div class="nameplate">
+          <p class="nameplate__meta" aria-hidden="true"><span data-key-status>qkd://handshake 0/13 symbols</span></p>
+          <h1 class="nameplate__name" data-decode="MOHAMMED FAHAD" aria-label="Mohammed Fahad">MOHAMMED FAHAD</h1>
+        </div>
       </section>
+
+      <!-- Outcomes -->
+      <section class="outcomes" aria-label="Selected outcomes">
+        <p class="label">// selected outcomes from shipped systems</p>
+        <dl class="outcomes__grid">
+          <div><dt>100K+</dt><dd>shipments tracked every day</dd><dd class="outcomes__src">Intugine, AWS event-driven</dd></div>
+          <div><dt>7</dt><dd>engineers led on a defense-grade platform</dd><dd class="outcomes__src">QNu Labs, QKDN</dd></div>
+          <div><dt>80+</dt><dd>platform APIs operated by an on-prem AI copilot</dd><dd class="outcomes__src">QNu Labs, local LLM + RAG</dd></div>
+          <div><dt>−60%</dt><dd>ticket resolution time after the Control Tower</dd><dd class="outcomes__src">Intugine, operations tooling</dd></div>
+        </dl>
+      </section>
+
+      <div class="ribbon" aria-hidden="true">
+        <div class="ribbon__track">
+          <span>BACKEND SYSTEMS</span><span>DISTRIBUTED ARCHITECTURE</span><span>KUBERNETES</span><span>QUANTUM NETWORKS</span><span>PAYMENTS</span><span>EMBEDDED &amp; IOT</span><span>AI AGENTS</span>
+          <span>BACKEND SYSTEMS</span><span>DISTRIBUTED ARCHITECTURE</span><span>KUBERNETES</span><span>QUANTUM NETWORKS</span><span>PAYMENTS</span><span>EMBEDDED &amp; IOT</span><span>AI AGENTS</span>
+        </div>
+      </div>
 
       <!-- Career trace -->
-      <section class="career" id="career" aria-labelledby="career-title">
-        <div class="wrap">
-          <h2 class="section-title" id="career-title">Career, as a trace</h2>
-          <p class="section-intro">
-            Each bar is a role, drawn to scale on a real timeline. Select one to see what I built there.
-          </p>
+      <section class="block" id="career" data-section="CAREER" aria-labelledby="career-title">
+        <p class="label">// career</p>
+        <h2 class="block__title" id="career-title">Career, as a trace</h2>
+        <p class="block__intro">Each bar is a role, drawn to scale on a real timeline. Select one to see what I built there.</p>
 
-          <div class="trace" data-trace data-from="2019-07">
-            <div class="trace__head">
-              <span class="trace__id">trace mohammed-fahad/career</span>
-              <span class="trace__dur" data-trace-duration>2019 to now</span>
-            </div>
-
-            <div class="trace__axis" aria-hidden="true" data-trace-axis></div>
-
-            <ol class="trace__spans">
-              <!-- QNu -->
-              <li class="span span--qnu" data-span data-start="2024-05" data-end="now">
-                <button class="span__row" aria-expanded="true" aria-controls="span-qnu">
-                  <span class="span__label">
-                    <span class="span__service">QNu Labs</span>
-                    <span class="span__op">Backend Tech Lead</span>
-                  </span>
-                  <span class="span__track"><span class="span__bar"><span class="span__live" aria-hidden="true"></span></span></span>
-                  <span class="span__time">May 2024 – present</span>
-                </button>
-                <div class="span__detail" id="span-qnu">
-                  <p class="span__summary">
-                    I lead a team of 7 building the backend for India's first Quantum Key Distribution Network, a
-                    defense-grade platform that runs on-premise and is moving to a highly available Kubernetes setup.
-                  </p>
-                  <div class="span__cols">
-                    <dl class="attrs">
-                      <div><dt>team.size</dt><dd>7 engineers</dd></div>
-                      <div><dt>domain</dt><dd>defense, quantum</dd></div>
-                      <div><dt>deploy</dt><dd>on-prem, Kubernetes</dd></div>
-                      <div><dt>ai.apis_covered</dt><dd>80+</dd></div>
-                    </dl>
-                    <ul class="events">
-                      <li>Architected access management, device orchestration, node lifecycle and event-driven messaging services.</li>
-                      <li>Leading the move to a highly available Kubernetes platform with automated failover, distributed storage and observability.</li>
-                      <li>Built an on-premise AI copilot for the network dashboard: a local LLM with retrieval that can operate 80+ platform APIs. Supervised 3 interns on it.</li>
-                      <li>Shipped passkey (WebAuthn) biometric login.</li>
-                      <li>Wrote Go services, including a WebSocket pub/sub transport.</li>
-                      <li>Designed a unified release process across repos: versioning, GitLab CI/CD pipelines and a QA standard.</li>
-                    </ul>
-                  </div>
-                  <p class="stack">TypeScript, NestJS, Go, Python, PostgreSQL, Redis, Kafka, RabbitMQ, Elasticsearch, Docker, Kubernetes</p>
-                </div>
-              </li>
-
-              <!-- Kenko -->
-              <li class="span span--kenko" data-span data-start="2022-01" data-end="2023-08">
-                <button class="span__row" aria-expanded="false" aria-controls="span-kenko">
-                  <span class="span__label">
-                    <span class="span__service">Kenko Health</span>
-                    <span class="span__op">SDE 2</span>
-                  </span>
-                  <span class="span__track"><span class="span__bar"></span></span>
-                  <span class="span__time">Jan 2022 – Aug 2023</span>
-                </button>
-                <div class="span__detail" id="span-kenko" hidden>
-                  <p class="span__summary">
-                    Health-tech startup. I moved the platform from a monolith to microservices and built the payment
-                    and B2B HR services.
-                  </p>
-                  <div class="span__cols">
-                    <dl class="attrs">
-                      <div><dt>payments.per_day</dt><dd>1K+</dd></div>
-                      <div><dt>hr.records_per_run</dt><dd>10K+</dd></div>
-                      <div><dt>crm.api_calls</dt><dd>5K+</dd></div>
-                      <div><dt>gateways</dt><dd>Razorpay, JusPay</dd></div>
-                    </dl>
-                    <ul class="events">
-                      <li>Led the monolith-to-microservices migration for better fault isolation, scaling and deploy frequency.</li>
-                      <li>Built a payment module across Razorpay and JusPay, with retries and audit logs.</li>
-                      <li>Built HR portal services for B2B clients with retries, audit logs and fallbacks.</li>
-                      <li>Kept the backend and HubSpot CRM in sync.</li>
-                    </ul>
-                  </div>
-                  <p class="stack">Node.js, NestJS, TypeScript, MongoDB, Prisma, AWS, Kafka, Elasticsearch, HubSpot</p>
-                </div>
-              </li>
-
-              <!-- Education -->
-              <li class="span span--edu" data-span data-start="2021-08" data-end="2023-07">
-                <button class="span__row" aria-expanded="false" aria-controls="span-edu">
-                  <span class="span__label">
-                    <span class="span__service">BITS Pilani</span>
-                    <span class="span__op">M.Tech, Software Systems</span>
-                  </span>
-                  <span class="span__track"><span class="span__bar"></span></span>
-                  <span class="span__time">2021 – 2023</span>
-                </button>
-                <div class="span__detail" id="span-edu" hidden>
-                  <p class="span__summary">
-                    Work-integrated M.Tech in Software Systems from BITS Pilani, completed alongside full-time work.
-                    Before that, a B.E. in Information Science from Vemana Institute of Technology, Bangalore (2015–2019).
-                  </p>
-                </div>
-              </li>
-
-              <!-- Intugine -->
-              <li class="span span--intugine" data-span data-start="2019-07" data-end="2022-01">
-                <button class="span__row" aria-expanded="false" aria-controls="span-intugine">
-                  <span class="span__label">
-                    <span class="span__service">Intugine</span>
-                    <span class="span__op">Software Engineer</span>
-                  </span>
-                  <span class="span__track"><span class="span__bar"></span></span>
-                  <span class="span__time">Jul 2019 – Jan 2022</span>
-                </button>
-                <div class="span__detail" id="span-intugine" hidden>
-                  <p class="span__summary">
-                    One of India's leading transportation management systems. I built the shipment tracking engine
-                    from scratch on AWS.
-                  </p>
-                  <div class="span__cols">
-                    <dl class="attrs">
-                      <div><dt>shipments.per_day</dt><dd>100K+</dd></div>
-                      <div><dt>enterprise.customers</dt><dd>75+</dd></div>
-                      <div><dt>ticket.resolution_time</dt><dd>−60%</dd></div>
-                      <div><dt>ticket.volume</dt><dd>−80%</dd></div>
-                    </dl>
-                    <ul class="events">
-                      <li>Built the tracking engine that follows 100K+ shipments every day.</li>
-                      <li>Built a Control Tower for operations that cut ticket resolution time by 60% and ticket volume by 80%.</li>
-                      <li>Ran event-driven workflows on ECS, Lambda, SQS/SNS and Step Functions.</li>
-                    </ul>
-                  </div>
-                  <p class="stack">Node.js, TypeScript, Express, MongoDB, AWS ECS, Lambda, SQS, SNS, Step Functions</p>
-                </div>
-              </li>
-            </ol>
+        <div class="trace" data-trace data-from="2019-07">
+          <div class="trace__head">
+            <span class="trace__id">trace mohammed-fahad/career</span>
+            <span data-trace-duration>2019 to now</span>
           </div>
+          <div class="trace__axis" aria-hidden="true" data-trace-axis></div>
+
+          <ol class="trace__spans">
+            <li class="span span--qnu" data-span data-start="2024-05" data-end="now">
+              <button class="span__row" aria-expanded="true" aria-controls="span-qnu">
+                <span class="span__label"><span class="span__service">QNu Labs</span><span class="span__op">Backend Tech Lead</span></span>
+                <span class="span__track"><span class="span__bar"><span class="span__live" aria-hidden="true"></span></span></span>
+                <span class="span__time">May 2024 – present</span>
+              </button>
+              <div class="span__detail" id="span-qnu">
+                <p class="span__summary">
+                  I lead a team of 7 building the backend for India's first Quantum Key Distribution Network, a
+                  defense-grade platform that runs on-premise and is moving to a highly available Kubernetes setup.
+                </p>
+                <div class="span__cols">
+                  <dl class="attrs">
+                    <div><dt>team.size</dt><dd>7 engineers</dd></div>
+                    <div><dt>domain</dt><dd>defense, quantum</dd></div>
+                    <div><dt>deploy</dt><dd>on-prem, Kubernetes</dd></div>
+                    <div><dt>ai.apis_covered</dt><dd>80+</dd></div>
+                  </dl>
+                  <ul class="events">
+                    <li>Architected access management, device orchestration, node lifecycle and event-driven messaging services.</li>
+                    <li>Leading the move to a highly available Kubernetes platform with automated failover, distributed storage and observability.</li>
+                    <li>Built an on-premise AI copilot for the network dashboard: a local LLM with retrieval that can operate 80+ platform APIs. Supervised 3 interns on it.</li>
+                    <li>Shipped passkey (WebAuthn) biometric login.</li>
+                    <li>Wrote Go services, including a WebSocket pub/sub transport.</li>
+                    <li>Designed a unified release process across repos: versioning, GitLab CI/CD pipelines and a QA standard.</li>
+                  </ul>
+                </div>
+                <p class="stack">TypeScript, NestJS, Go, Python, PostgreSQL, Redis, Kafka, RabbitMQ, Elasticsearch, Docker, Kubernetes</p>
+              </div>
+            </li>
+
+            <li class="span span--kenko" data-span data-start="2022-01" data-end="2023-08">
+              <button class="span__row" aria-expanded="false" aria-controls="span-kenko">
+                <span class="span__label"><span class="span__service">Kenko Health</span><span class="span__op">SDE 2</span></span>
+                <span class="span__track"><span class="span__bar"></span></span>
+                <span class="span__time">Jan 2022 – Aug 2023</span>
+              </button>
+              <div class="span__detail" id="span-kenko" hidden>
+                <p class="span__summary">
+                  Health-tech startup. I moved the platform from a monolith to microservices and built the payment and
+                  B2B HR services.
+                </p>
+                <div class="span__cols">
+                  <dl class="attrs">
+                    <div><dt>payments.per_day</dt><dd>1K+</dd></div>
+                    <div><dt>hr.records_per_run</dt><dd>10K+</dd></div>
+                    <div><dt>crm.api_calls</dt><dd>5K+</dd></div>
+                    <div><dt>gateways</dt><dd>Razorpay, JusPay</dd></div>
+                  </dl>
+                  <ul class="events">
+                    <li>Led the monolith-to-microservices migration for better fault isolation, scaling and deploy frequency.</li>
+                    <li>Built a payment module across Razorpay and JusPay, with retries and audit logs.</li>
+                    <li>Built HR portal services for B2B clients with retries, audit logs and fallbacks.</li>
+                    <li>Kept the backend and HubSpot CRM in sync.</li>
+                  </ul>
+                </div>
+                <p class="stack">Node.js, NestJS, TypeScript, MongoDB, Prisma, AWS, Kafka, Elasticsearch, HubSpot</p>
+              </div>
+            </li>
+
+            <li class="span span--edu" data-span data-start="2021-08" data-end="2023-07">
+              <button class="span__row" aria-expanded="false" aria-controls="span-edu">
+                <span class="span__label"><span class="span__service">BITS Pilani</span><span class="span__op">M.Tech, Software Systems</span></span>
+                <span class="span__track"><span class="span__bar"></span></span>
+                <span class="span__time">2021 – 2023</span>
+              </button>
+              <div class="span__detail" id="span-edu" hidden>
+                <p class="span__summary">
+                  Work-integrated M.Tech in Software Systems from BITS Pilani, completed alongside full-time work. Before
+                  that, a B.E. in Information Science from Vemana Institute of Technology, Bangalore (2015–2019).
+                </p>
+              </div>
+            </li>
+
+            <li class="span span--intugine" data-span data-start="2019-07" data-end="2022-01">
+              <button class="span__row" aria-expanded="false" aria-controls="span-intugine">
+                <span class="span__label"><span class="span__service">Intugine</span><span class="span__op">Software Engineer</span></span>
+                <span class="span__track"><span class="span__bar"></span></span>
+                <span class="span__time">Jul 2019 – Jan 2022</span>
+              </button>
+              <div class="span__detail" id="span-intugine" hidden>
+                <p class="span__summary">
+                  One of India's leading transportation management systems. I built the shipment tracking engine from
+                  scratch on AWS.
+                </p>
+                <div class="span__cols">
+                  <dl class="attrs">
+                    <div><dt>shipments.per_day</dt><dd>100K+</dd></div>
+                    <div><dt>enterprise.customers</dt><dd>75+</dd></div>
+                    <div><dt>ticket.resolution_time</dt><dd>−60%</dd></div>
+                    <div><dt>ticket.volume</dt><dd>−80%</dd></div>
+                  </dl>
+                  <ul class="events">
+                    <li>Built the tracking engine that follows 100K+ shipments every day.</li>
+                    <li>Built a Control Tower for operations that cut ticket resolution time by 60% and ticket volume by 80%.</li>
+                    <li>Ran event-driven workflows on ECS, Lambda, SQS/SNS and Step Functions.</li>
+                  </ul>
+                </div>
+                <p class="stack">Node.js, TypeScript, Express, MongoDB, AWS ECS, Lambda, SQS, SNS, Step Functions</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <!-- Selected work -->
-      <section class="work wrap" id="work" aria-labelledby="work-title">
-        <h2 class="section-title" id="work-title">Selected work</h2>
+      <!-- Work -->
+      <section class="block" id="work" data-section="PROJECTS" aria-labelledby="work-title">
+        <p class="label">// work</p>
+        <h2 class="block__title" id="work-title">Systems I've built at work</h2>
 
-        <article class="case">
-          <div class="case__meta">
-            <p class="case__where">QNu Labs, 2024 – present</p>
-            <p class="stack">TypeScript, NestJS, PostgreSQL, Redis, Kafka, RabbitMQ, Kubernetes</p>
-          </div>
-          <div class="case__body">
-            <h3 class="case__title">Quantum Key Distribution Network platform</h3>
+        <div class="cards">
+          <article class="card">
+            <header class="card__head">
+              <h3 class="card__title">Quantum Key Distribution Network platform</h3>
+              <span class="status status--live">[IN PRODUCTION]</span>
+            </header>
+            <p class="card__where">QNu Labs, 2024 – present</p>
             <p>
               The backend for India's first QKD network, used in defense. Quantum nodes generate encryption keys; the
               platform manages who can use them, keeps the nodes healthy and moves events between them reliably.
             </p>
             <ul>
-              <li>Access management, device orchestration and node lifecycle services, connected through event-driven messaging.</li>
-              <li>Delivered first as an on-premise, defense-grade deployment; now becoming a highly available Kubernetes platform with failover, distributed storage and monitoring.</li>
+              <li>Access management, device orchestration and node lifecycle services over event-driven messaging.</li>
+              <li>On-premise first, now becoming a highly available Kubernetes platform with failover and monitoring.</li>
               <li>Multi-architecture builds (amd64 and arm64) and one release process across all repositories.</li>
             </ul>
-          </div>
-        </article>
+            <p class="tags"><span>TypeScript</span><span>NestJS</span><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>Kubernetes</span></p>
+          </article>
 
-        <article class="case">
-          <div class="case__meta">
-            <p class="case__where">QNu Labs</p>
-            <p class="stack">Python, FastAPI, WebSockets, Ollama, Qwen 2.5 7B, Qdrant</p>
-          </div>
-          <div class="case__body">
-            <h3 class="case__title">On-premise AI copilot for network operators</h3>
+          <article class="card">
+            <header class="card__head">
+              <h3 class="card__title">On-premise AI copilot for network operators</h3>
+              <span class="status">[SHIPPED]</span>
+            </header>
+            <p class="card__where">QNu Labs</p>
             <p>
-              Operators can ask the network dashboard questions in plain language and have it carry out tasks. It runs
+              Operators ask the network dashboard questions in plain language and have it carry out tasks. It runs
               entirely on-site on CPUs, because defense data can't leave the premises.
             </p>
             <ul>
@@ -283,66 +285,146 @@
               <li>A configuration-driven executor that lets the copilot call 80+ platform APIs.</li>
               <li>Built with three interns whom I supervised.</li>
             </ul>
-          </div>
-        </article>
+            <p class="tags"><span>Python</span><span>FastAPI</span><span>Ollama</span><span>Qwen 2.5 7B</span><span>Qdrant</span></p>
+          </article>
 
-        <article class="case">
-          <div class="case__meta">
-            <p class="case__where">Intugine, 2019 – 2022</p>
-            <p class="stack">Node.js, MongoDB, AWS ECS, Lambda, SQS, SNS, Step Functions</p>
-          </div>
-          <div class="case__body">
-            <h3 class="case__title">Shipment tracking engine and Control Tower</h3>
+          <article class="card">
+            <header class="card__head">
+              <h3 class="card__title">Shipment tracking engine and Control Tower</h3>
+              <span class="status">[SHIPPED]</span>
+            </header>
+            <p class="card__where">Intugine, 2019 – 2022</p>
             <p>
               Real-time tracking for 100K+ shipments a day across 75+ enterprise customers of one of India's leading
               transportation management systems.
             </p>
             <ul>
               <li>Built the tracking engine from scratch as event-driven services on AWS.</li>
-              <li>Built the Control Tower that gives operations one view of exceptions, cutting ticket resolution time by 60% and ticket volume by 80%.</li>
+              <li>Built the Control Tower that cut ticket resolution time by 60% and ticket volume by 80%.</li>
             </ul>
-          </div>
-        </article>
+            <p class="tags"><span>Node.js</span><span>MongoDB</span><span>ECS</span><span>Lambda</span><span>SQS/SNS</span><span>Step Functions</span></p>
+          </article>
 
-        <article class="case">
-          <div class="case__meta">
-            <p class="case__where">Kenko Health, 2022 – 2023</p>
-            <p class="stack">NestJS, TypeScript, MongoDB, Prisma, Kafka, Razorpay, JusPay, HubSpot</p>
-          </div>
-          <div class="case__body">
-            <h3 class="case__title">Payments and HR platform</h3>
-            <p>
-              Core services for a health-tech startup as it moved from a monolith to microservices.
-            </p>
+          <article class="card">
+            <header class="card__head">
+              <h3 class="card__title">Payments and HR platform</h3>
+              <span class="status">[SHIPPED]</span>
+            </header>
+            <p class="card__where">Kenko Health, 2022 – 2023</p>
+            <p>Core services for a health-tech startup as it moved from a monolith to microservices.</p>
             <ul>
               <li>A payment module across Razorpay and JusPay handling 1K+ transactions a day, with retries and audit logs.</li>
               <li>A B2B HR portal that processes 10K+ employee records per run.</li>
-              <li>CRM integration with HubSpot, syncing data across 5K+ API calls.</li>
+              <li>HubSpot CRM integration syncing data across 5K+ API calls.</li>
             </ul>
-          </div>
-        </article>
+            <p class="tags"><span>NestJS</span><span>MongoDB</span><span>Prisma</span><span>Kafka</span><span>Razorpay</span><span>JusPay</span></p>
+          </article>
+        </div>
       </section>
 
-      <!-- Skills -->
-      <section class="skills wrap" id="skills" aria-labelledby="skills-title">
-        <h2 class="section-title" id="skills-title">Skills</h2>
-        <div class="skills__grid">
-          <div>
-            <h3 class="skills__head">Use every day</h3>
+      <!-- Lab: hardware and IoT -->
+      <section class="block" id="lab" data-section="LAB" aria-labelledby="lab-title">
+        <p class="label">// lab</p>
+        <h2 class="block__title" id="lab-title">After hours: hardware and IoT</h2>
+        <p class="block__intro">
+          I like systems I can hold. My side projects sit where backend engineering meets electronics: firmware, file
+          formats, sync protocols and PCBs.
+        </p>
+
+        <article class="feature">
+          <div class="feature__main">
+            <header class="card__head">
+              <h3 class="feature__title">E-ink Quran and library reader</h3>
+              <span class="status status--live">[IN PROGRESS]</span>
+            </header>
+            <p>
+              An offline-first e-ink reader built on an ESP32-S3, with a desktop app that converts books and sends them
+              to the device. It works with no internet at all; Wi-Fi and Bluetooth are only for setup and sync.
+            </p>
+            <ul class="events">
+              <li>Firmware for the e-paper display, SD card, buttons and rotary wheel, and deep sleep and wake, brought up and verified on real hardware.</li>
+              <li>A custom binary content format with a parser on the device and a TypeScript reader/writer on desktop, kept byte-identical by a shared test fixture.</li>
+              <li>A converter that turns PDF, EPUB and text into validated packages, with a preview before install.</li>
+              <li>Resumable uploads with atomic install, tested against power loss at every write, plus Bluetooth first-boot setup.</li>
+              <li>A Tauri desktop app with library, device, converter and photo tabs.</li>
+              <li>Doubles as a table clock: Wi-Fi time sync and a rotating greyscale photo on the home screen.</li>
+            </ul>
+            <a class="panel-btn panel-btn--inline" href="https://github.com/modfahad/diy-ebook" target="_blank" rel="noopener" data-ga="GitHub e-reader|Lab">
+              <span>View the code on GitHub</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7 M8 7h9v9" /></svg>
+            </a>
+          </div>
+
+          <aside class="spec" aria-label="Reader specifications">
+            <p class="label">// spec sheet</p>
+            <dl class="attrs">
+              <div><dt>mcu</dt><dd>ESP32-S3</dd></div>
+              <div><dt>display</dt><dd>7.5" e-paper, 800×480</dd></div>
+              <div><dt>display.prev</dt><dd>5.79" (verified)</dd></div>
+              <div><dt>touch</dt><dd>GT911, next board</dd></div>
+              <div><dt>audio</dt><dd>PCM5102A DAC, next board</dd></div>
+              <div><dt>content</dt><dd>114 surahs, 6,236 ayahs</dd></div>
+              <div><dt>host.tests</dt><dd>198 passing</dd></div>
+              <div><dt>firmware</dt><dd>C++, PlatformIO</dd></div>
+              <div><dt>desktop</dt><dd>Tauri, React, TypeScript</dd></div>
+              <div><dt>pcb</dt><dd>KiCad, 2 boards</dd></div>
+            </dl>
+          </aside>
+        </article>
+
+        <div class="bench">
+          <h3 class="bench__title">On the bench</h3>
+          <ul class="bench__list">
+            <li>
+              <span class="status">[DESIGNING]</span>
+              <div>
+                <p class="bench__name">Custom ESP32-S3 board for the reader</p>
+                <p>A two-board design in KiCad: a control board with the MCU, buttons and power switch, and a display breakout linked by flex cable. Fabricated through PCBWay, with a slim 3D-printed back cover.</p>
+              </div>
+            </li>
+            <li>
+              <span class="status">[PLANNING]</span>
+              <div>
+                <p class="bench__name">Large-format, multi-colour 3D printer</p>
+                <p>A 400 mm build volume with automatic filament switching, with parts printed on my Bambu Lab A1 mini.</p>
+              </div>
+            </li>
+            <li>
+              <span class="status">[EXPLORING]</span>
+              <div>
+                <p class="bench__name">An e-ink Android phone</p>
+                <p>A distraction-free phone built around an e-paper screen.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Capabilities -->
+      <section class="block" id="skills" data-section="SKILLS" aria-labelledby="skills-title">
+        <p class="label">// capabilities</p>
+        <h2 class="block__title" id="skills-title">What I work with</h2>
+        <div class="caps">
+          <div class="cap">
+            <h3 class="cap__head">Every day</h3>
             <p>Node.js, TypeScript, NestJS, PostgreSQL, Redis, Docker, Kubernetes, GitLab CI/CD, system design, code review, technical planning</p>
           </div>
-          <div>
-            <h3 class="skills__head">Shipped to production</h3>
+          <div class="cap">
+            <h3 class="cap__head">Shipped to production</h3>
             <p>Go, Python (FastAPI), MongoDB, Kafka, RabbitMQ, Elasticsearch, Prometheus, Grafana, AWS (ECS, Lambda, SQS, SNS, Step Functions, S3, ElastiCache), WebSockets, WebAuthn, Razorpay, JusPay, local LLMs with RAG</p>
           </div>
-          <div>
-            <h3 class="skills__head">Going deeper on now</h3>
+          <div class="cap">
+            <h3 class="cap__head">Hardware and IoT</h3>
+            <p>ESP32-S3, C++ firmware with PlatformIO, e-paper displays, BLE, SD storage, KiCad PCB design, 3D printing, Tauri desktop apps</p>
+          </div>
+          <div class="cap">
+            <h3 class="cap__head">Going deeper on now</h3>
             <p>Go at depth, AWS architecture, AI agents and the Model Context Protocol</p>
           </div>
         </div>
 
-        <div class="learning">
-          <h3 class="skills__head">Education and courses</h3>
+        <div class="creds">
+          <h3 class="cap__head">Education and courses</h3>
           <ul>
             <li>M.Tech, Software Systems, BITS Pilani (WILP), 2021 – 2023</li>
             <li>B.E., Information Science and Engineering, Vemana Institute of Technology, 2015 – 2019</li>
@@ -353,34 +435,47 @@
       </section>
 
       <!-- Contact -->
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="wrap">
-          <h2 class="section-title" id="contact-title">Let's talk</h2>
-          <p class="contact__lede">
-            I'm open to backend lead and senior backend roles in India and the Gulf. Email is the fastest way to reach me.
-          </p>
-          <a class="contact__email" href="mailto:mhdfahad18@gmail.com" data-ga="Email|Contact">mhdfahad18@gmail.com</a>
-          <ul class="contact__links">
-            <li>
-              <a
-                href="https://wa.me/918904171848?text=Hi%20Mohammed%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20talk."
-                target="_blank"
-                rel="noopener"
-                data-ga="WhatsApp|Contact"
-                >WhatsApp</a
-              >
-            </li>
-            <li><a href="https://www.linkedin.com/in/meetmhdfahad/" target="_blank" rel="noopener" data-ga="LinkedIn|Contact">LinkedIn</a></li>
-            <li><a href="https://github.com/modfahad" target="_blank" rel="noopener" data-ga="GitHub|Contact">GitHub</a></li>
-            <li><a href="./assets/docs/Mohammed_Fahad__Resume.pdf" download data-ga="Download CV|Contact">Download CV (PDF)</a></li>
-          </ul>
-        </div>
+      <section class="block contact" id="contact" data-section="CONTACT" aria-labelledby="contact-title">
+        <p class="label">// contact</p>
+        <h2 class="block__title" id="contact-title">Have a system to build?</h2>
+        <p class="block__intro">
+          I'm open to backend lead and senior backend roles in India and the Gulf. Email is the fastest way to reach me.
+        </p>
+        <a class="contact__email" href="mailto:mhdfahad18@gmail.com" data-ga="Email|Contact">mhdfahad18@gmail.com</a>
+        <ul class="contact__links">
+          <li><a href="https://wa.me/918904171848?text=Hi%20Mohammed%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" data-ga="WhatsApp|Contact">WhatsApp</a></li>
+          <li><a href="https://www.linkedin.com/in/meetmhdfahad/" target="_blank" rel="noopener" data-ga="LinkedIn|Contact">LinkedIn</a></li>
+          <li><a href="https://github.com/modfahad" target="_blank" rel="noopener" data-ga="GitHub|Contact">GitHub</a></li>
+          <li><a href="./assets/docs/Mohammed_Fahad__Resume.pdf" download data-ga="Download CV|Contact">Download CV (PDF)</a></li>
+        </ul>
       </section>
+
+      <footer class="footer">
+        <p>© <span data-year>2026</span> Mohammed Fahad</p>
+      </footer>
     </main>
 
-    <footer class="footer wrap">
-      <p>© <span data-year>2026</span> Mohammed Fahad</p>
-    </footer>
+    <!-- Bottom dock -->
+    <nav class="dock" aria-label="Sections">
+      <a href="#home" data-dock="home" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z" /></svg>
+      </a>
+      <a href="#career" data-dock="career" aria-label="Career">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h8 M6 12h12 M10 18h11" /></svg>
+      </a>
+      <a href="#work" data-dock="work" aria-label="Work">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3z M9 7V4h6v3" /></svg>
+      </a>
+      <a href="#lab" data-dock="lab" aria-label="Hardware lab">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7z M10 3v4 M14 3v4 M10 17v4 M14 17v4 M3 10h4 M3 14h4 M17 10h4 M17 14h4" /></svg>
+      </a>
+      <a href="#skills" data-dock="skills" aria-label="Capabilities">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16 M4 12h16 M4 18h10" /></svg>
+      </a>
+      <a href="#contact" data-dock="contact" aria-label="Contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" /></svg>
+      </a>
+    </nav>
 
     <script src="./assets/js/site.js" defer></script>
   </body>
