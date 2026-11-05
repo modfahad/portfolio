@@ -197,6 +197,29 @@
     sections.forEach(function (s) { so.observe(s); });
   }
 
+  // Copy email, with a visible confirmation.
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = 'Email copied';
+        btn.classList.add('is-done');
+        setTimeout(function () {
+          btn.textContent = label;
+          btn.classList.remove('is-done');
+        }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(btn.dataset.copy).then(done, function () {
+          window.location.href = 'mailto:' + btn.dataset.copy;
+        });
+      } else {
+        window.location.href = 'mailto:' + btn.dataset.copy;
+      }
+      if (typeof gtag === 'function') gtag('event', 'click', { event_category: 'Contact', event_label: 'Copy email' });
+    });
+  });
+
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
 })();

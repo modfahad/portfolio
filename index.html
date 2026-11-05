@@ -81,11 +81,25 @@
         <div class="hero__grid">
           <div class="hero__intro">
             <p class="hero__role">Backend tech lead and systems builder, based in Bangalore.</p>
+            <dl class="now">
+              <div class="now__row now__row--live">
+                <dt>NOW</dt>
+                <dd>Moving India's first quantum key distribution network onto highly available Kubernetes</dd>
+              </div>
+              <div class="now__row">
+                <dt>OPEN_TO</dt>
+                <dd>Backend lead and senior backend roles in India and the Gulf</dd>
+              </div>
+              <div class="now__row">
+                <dt>ON_THE_BENCH</dt>
+                <dd>An ESP32-S3 e-ink reader with its own firmware, file format and PCB</dd>
+              </div>
+            </dl>
           </div>
           <div class="hero__side">
             <p>
-              I build backends that can't go down: India's first quantum key distribution network, tracking for
-              100K+ shipments a day, and payments. After hours, I build hardware.
+              I build backends that can't go down: a defense-grade quantum network, tracking for 100K+ shipments a
+              day, and payments. After hours, I build hardware.
             </p>
             <a class="panel-btn" href="#work">
               <span>Explore work</span>
@@ -131,7 +145,7 @@
       <section class="block" id="career" data-section="CAREER" aria-labelledby="career-title">
         <p class="label">// career</p>
         <h2 class="block__title" id="career-title">Career, as a trace</h2>
-        <p class="block__intro">Each bar is a role, drawn to scale on a real timeline. Select one to see what I built there.</p>
+        <p class="block__intro">Each bar is a job, drawn to scale on a real timeline. Select one to see what I built there.</p>
 
         <div class="trace" data-trace data-from="2019-07">
           <div class="trace__head">
@@ -201,20 +215,6 @@
               </div>
             </li>
 
-            <li class="span span--edu" data-span data-start="2021-08" data-end="2023-07">
-              <button class="span__row" aria-expanded="false" aria-controls="span-edu">
-                <span class="span__label"><span class="span__service">BITS Pilani</span><span class="span__op">M.Tech, Software Systems</span></span>
-                <span class="span__track"><span class="span__bar"></span></span>
-                <span class="span__time">2021 – 2023</span>
-              </button>
-              <div class="span__detail" id="span-edu" hidden>
-                <p class="span__summary">
-                  Work-integrated M.Tech in Software Systems from BITS Pilani, completed alongside full-time work. Before
-                  that, a B.E. in Information Science from Vemana Institute of Technology, Bangalore (2015–2019).
-                </p>
-              </div>
-            </li>
-
             <li class="span span--intugine" data-span data-start="2019-07" data-end="2022-01">
               <button class="span__row" aria-expanded="false" aria-controls="span-intugine">
                 <span class="span__label"><span class="span__service">Intugine</span><span class="span__op">Software Engineer</span></span>
@@ -247,62 +247,99 @@
       </section>
 
       <!-- Work -->
-      <section class="block" id="work" data-section="PROJECTS" aria-labelledby="work-title">
+      <section class="block" id="work" data-section="WORK" aria-labelledby="work-title">
         <p class="label">// work</p>
         <h2 class="block__title" id="work-title">Systems I've built at work</h2>
 
-        <div class="cards">
-          <article class="card">
+        <article class="flagship">
+          <div class="flagship__text">
             <header class="card__head">
-              <h3 class="card__title">Quantum Key Distribution Network platform</h3>
+              <h3 class="flagship__title">Quantum Key Distribution Network platform</h3>
               <span class="status status--live">[IN PRODUCTION]</span>
             </header>
-            <p class="card__where">QNu Labs, 2024 – present</p>
+            <p class="card__where">QNu Labs, 2024 – present, team of 7</p>
             <p>
               The backend for India's first QKD network, used in defense. Quantum nodes generate encryption keys; the
-              platform manages who can use them, keeps the nodes healthy and moves events between them reliably.
+              platform decides who can use them, keeps the nodes healthy and moves events between them reliably.
             </p>
-            <ul>
-              <li>Access management, device orchestration and node lifecycle services over event-driven messaging.</li>
-              <li>On-premise first, now becoming a highly available Kubernetes platform with failover and monitoring.</li>
-              <li>Multi-architecture builds (amd64 and arm64) and one release process across all repositories.</li>
+            <ul class="events">
+              <li>Access management, device orchestration and node lifecycle services, connected by an event bus.</li>
+              <li>On-premise first, now becoming a highly available Kubernetes platform with failover, distributed storage and monitoring.</li>
+              <li>An on-prem AI copilot so operators can run the network in plain language.</li>
+              <li>Multi-architecture builds (amd64 and arm64) and one release process across every repository.</li>
             </ul>
-            <p class="tags"><span>TypeScript</span><span>NestJS</span><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>Kubernetes</span></p>
-          </article>
+            <p class="tags"><span>TypeScript</span><span>NestJS</span><span>Go</span><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>RabbitMQ</span><span>Kubernetes</span></p>
+          </div>
 
+          <figure class="map" aria-label="Simplified service map of the QKDN platform">
+            <svg viewBox="0 0 400 380" role="img" aria-hidden="true" class="map__svg">
+              <rect class="map__frame" x="8" y="8" width="384" height="364" rx="10" />
+              <text class="map__frame-label" x="22" y="30">kubernetes: ha, failover, observability</text>
+
+              <rect class="map__box" x="40" y="48" width="150" height="44" rx="6" />
+              <text class="map__name" x="115" y="68">Dashboard</text>
+              <text class="map__note" x="115" y="83">operators</text>
+              <rect class="map__box map__box--accent" x="210" y="48" width="150" height="44" rx="6" />
+              <text class="map__name" x="285" y="68">AI copilot</text>
+              <text class="map__note" x="285" y="83">local LLM + RAG</text>
+
+              <path class="map__wire" d="M115 92 V118 M285 92 V118" />
+              <rect class="map__box" x="40" y="118" width="320" height="44" rx="6" />
+              <text class="map__name" x="200" y="138">Access management</text>
+              <text class="map__note" x="200" y="153">who can use which keys</text>
+
+              <path class="map__wire" d="M200 162 V188" />
+              <rect class="map__bus" x="24" y="188" width="352" height="34" rx="6" />
+              <text class="map__bus-label" x="200" y="210">event bus: kafka, rabbitmq</text>
+
+              <path class="map__wire" d="M115 222 V248 M285 222 V248" />
+              <rect class="map__box" x="40" y="248" width="150" height="44" rx="6" />
+              <text class="map__name" x="115" y="268">Node lifecycle</text>
+              <text class="map__note" x="115" y="283">health, state</text>
+              <rect class="map__box" x="210" y="248" width="150" height="44" rx="6" />
+              <text class="map__name" x="285" y="268">Device orchestration</text>
+              <text class="map__note" x="285" y="283">config, commands</text>
+
+              <path class="map__wire map__wire--key" d="M115 292 V320 M285 292 V320" />
+              <g class="map__nodes">
+                <rect x="52" y="322" width="22" height="22" /><rect x="96" y="322" width="22" height="22" /><rect x="140" y="322" width="22" height="22" />
+                <rect x="238" y="322" width="22" height="22" /><rect x="282" y="322" width="22" height="22" /><rect x="326" y="322" width="22" height="22" />
+              </g>
+              <path class="map__wire map__wire--key" d="M74 333 H96 M118 333 H140 M162 333 H238 M260 333 H282 M304 333 H326" />
+              <text class="map__note" x="200" y="362">qkd nodes</text>
+            </svg>
+            <figcaption>Simplified service map. Red lines carry key traffic between quantum nodes.</figcaption>
+          </figure>
+        </article>
+
+        <div class="cards cards--3">
           <article class="card">
             <header class="card__head">
-              <h3 class="card__title">On-premise AI copilot for network operators</h3>
+              <h3 class="card__title">On-prem AI copilot</h3>
               <span class="status">[SHIPPED]</span>
             </header>
             <p class="card__where">QNu Labs</p>
-            <p>
-              Operators ask the network dashboard questions in plain language and have it carry out tasks. It runs
-              entirely on-site on CPUs, because defense data can't leave the premises.
-            </p>
+            <p>Operators ask the network dashboard questions in plain language and have it carry out tasks, entirely on-site on CPUs.</p>
             <ul>
-              <li>A local 7B model with retrieval over platform documentation, served over WebSockets.</li>
-              <li>A configuration-driven executor that lets the copilot call 80+ platform APIs.</li>
-              <li>Built with three interns whom I supervised.</li>
+              <li>Local 7B model with retrieval over platform docs, over WebSockets.</li>
+              <li>A config-driven executor for 80+ platform APIs.</li>
+              <li>Built with three interns I supervised.</li>
             </ul>
-            <p class="tags"><span>Python</span><span>FastAPI</span><span>Ollama</span><span>Qwen 2.5 7B</span><span>Qdrant</span></p>
+            <p class="tags"><span>Python</span><span>FastAPI</span><span>Ollama</span><span>Qdrant</span></p>
           </article>
 
           <article class="card">
             <header class="card__head">
-              <h3 class="card__title">Shipment tracking engine and Control Tower</h3>
+              <h3 class="card__title">Shipment tracking and Control Tower</h3>
               <span class="status">[SHIPPED]</span>
             </header>
             <p class="card__where">Intugine, 2019 – 2022</p>
-            <p>
-              Real-time tracking for 100K+ shipments a day across 75+ enterprise customers of one of India's leading
-              transportation management systems.
-            </p>
+            <p>Real-time tracking for 100K+ shipments a day across 75+ enterprise customers of a leading Indian TMS.</p>
             <ul>
-              <li>Built the tracking engine from scratch as event-driven services on AWS.</li>
-              <li>Built the Control Tower that cut ticket resolution time by 60% and ticket volume by 80%.</li>
+              <li>Tracking engine built from scratch as event-driven AWS services.</li>
+              <li>Control Tower: −60% ticket resolution time, −80% ticket volume.</li>
             </ul>
-            <p class="tags"><span>Node.js</span><span>MongoDB</span><span>ECS</span><span>Lambda</span><span>SQS/SNS</span><span>Step Functions</span></p>
+            <p class="tags"><span>Node.js</span><span>MongoDB</span><span>Lambda</span><span>SQS/SNS</span><span>Step Functions</span></p>
           </article>
 
           <article class="card">
@@ -313,11 +350,11 @@
             <p class="card__where">Kenko Health, 2022 – 2023</p>
             <p>Core services for a health-tech startup as it moved from a monolith to microservices.</p>
             <ul>
-              <li>A payment module across Razorpay and JusPay handling 1K+ transactions a day, with retries and audit logs.</li>
-              <li>A B2B HR portal that processes 10K+ employee records per run.</li>
-              <li>HubSpot CRM integration syncing data across 5K+ API calls.</li>
+              <li>Razorpay and JusPay payments, 1K+ a day, with retries and audit logs.</li>
+              <li>B2B HR portal processing 10K+ records per run.</li>
+              <li>HubSpot CRM sync across 5K+ API calls.</li>
             </ul>
-            <p class="tags"><span>NestJS</span><span>MongoDB</span><span>Prisma</span><span>Kafka</span><span>Razorpay</span><span>JusPay</span></p>
+            <p class="tags"><span>NestJS</span><span>MongoDB</span><span>Kafka</span><span>Razorpay</span></p>
           </article>
         </div>
       </section>
@@ -341,13 +378,17 @@
               An offline-first e-ink reader built on an ESP32-S3, with a desktop app that converts books and sends them
               to the device. It works with no internet at all; Wi-Fi and Bluetooth are only for setup and sync.
             </p>
+            <ol class="pipeline" aria-label="How a book gets onto the reader">
+              <li><span class="pipeline__name">Desktop app</span><span class="pipeline__note">Tauri app: add PDF, EPUB or text</span></li>
+              <li><span class="pipeline__name">Converter</span><span class="pipeline__note">validates and previews before install</span></li>
+              <li><span class="pipeline__name">Package</span><span class="pipeline__note">custom binary format, byte-identical on both sides</span></li>
+              <li><span class="pipeline__name">Upload</span><span class="pipeline__note">resumable, atomic, safe on power loss</span></li>
+              <li><span class="pipeline__name">Device</span><span class="pipeline__note">ESP32-S3 renders to e-paper from SD</span></li>
+            </ol>
             <ul class="events">
-              <li>Firmware for the e-paper display, SD card, buttons and rotary wheel, and deep sleep and wake, brought up and verified on real hardware.</li>
-              <li>A custom binary content format with a parser on the device and a TypeScript reader/writer on desktop, kept byte-identical by a shared test fixture.</li>
-              <li>A converter that turns PDF, EPUB and text into validated packages, with a preview before install.</li>
-              <li>Resumable uploads with atomic install, tested against power loss at every write, plus Bluetooth first-boot setup.</li>
-              <li>A Tauri desktop app with library, device, converter and photo tabs.</li>
-              <li>Doubles as a table clock: Wi-Fi time sync and a rotating greyscale photo on the home screen.</li>
+              <li>Firmware for the display, SD card, buttons, rotary wheel and deep sleep, verified on real hardware.</li>
+              <li>198 host tests on the firmware, with power loss simulated at every write during install.</li>
+              <li>Bluetooth first-boot setup, and a table-clock home screen with Wi-Fi time sync and a rotating greyscale photo.</li>
             </ul>
             <a class="panel-btn panel-btn--inline" href="https://github.com/modfahad/diy-ebook" target="_blank" rel="noopener" data-ga="GitHub e-reader|Lab">
               <span>View the code on GitHub</span>
@@ -423,14 +464,21 @@
           </div>
         </div>
 
-        <div class="creds">
-          <h3 class="cap__head">Education and courses</h3>
-          <ul>
-            <li>M.Tech, Software Systems, BITS Pilani (WILP), 2021 – 2023</li>
-            <li>B.E., Information Science and Engineering, Vemana Institute of Technology, 2015 – 2019</li>
-            <li>MongoDB University: Node.js Developer Path, Aggregation with Node.js (2023)</li>
-            <li>Udemy: Fundamentals of Backend Engineering; NestJS Zero to Hero (2023)</li>
-          </ul>
+        <h3 class="edu__title">Education</h3>
+        <div class="edu">
+          <div class="edu__item">
+            <h3 class="cap__head">M.Tech, Software Systems</h3>
+            <p>BITS Pilani, Work Integrated Learning Programme, 2021 – 2023. Completed alongside full-time work.</p>
+          </div>
+          <div class="edu__item">
+            <h3 class="cap__head">B.E., Information Science and Engineering</h3>
+            <p>Vemana Institute of Technology, Bangalore, 2015 – 2019</p>
+          </div>
+          <div class="edu__item">
+            <p class="label">// courses</p>
+            <h3 class="cap__head">MongoDB University and Udemy</h3>
+            <p>MongoDB Node.js Developer Path and Aggregation with Node.js; Fundamentals of Backend Engineering; NestJS Zero to Hero (2023)</p>
+          </div>
         </div>
       </section>
 
@@ -441,7 +489,15 @@
         <p class="block__intro">
           I'm open to backend lead and senior backend roles in India and the Gulf. Email is the fastest way to reach me.
         </p>
-        <a class="contact__email" href="mailto:mhdfahad18@gmail.com" data-ga="Email|Contact">mhdfahad18@gmail.com</a>
+        <div class="contact__row">
+          <a class="contact__email" href="mailto:mhdfahad18@gmail.com" data-ga="Email|Contact">mhdfahad18@gmail.com</a>
+          <button class="copy" type="button" data-copy="mhdfahad18@gmail.com">Copy email</button>
+        </div>
+        <dl class="contact__facts">
+          <div><dt>based_in</dt><dd>Bangalore, IST (UTC+5:30)</dd></div>
+          <div><dt>open_to</dt><dd>India and the Gulf, happy to relocate</dd></div>
+          <div><dt>roles</dt><dd>Backend lead, senior backend, platform</dd></div>
+        </dl>
         <ul class="contact__links">
           <li><a href="https://wa.me/918904171848?text=Hi%20Mohammed%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" data-ga="WhatsApp|Contact">WhatsApp</a></li>
           <li><a href="https://www.linkedin.com/in/meetmhdfahad/" target="_blank" rel="noopener" data-ga="LinkedIn|Contact">LinkedIn</a></li>
@@ -459,22 +515,22 @@
     <nav class="dock" aria-label="Sections">
       <a href="#home" data-dock="home" aria-label="Home">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z" /></svg>
-      </a>
+      <span class="dock__tip">Home</span></a>
       <a href="#career" data-dock="career" aria-label="Career">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h8 M6 12h12 M10 18h11" /></svg>
-      </a>
+      <span class="dock__tip">Career</span></a>
       <a href="#work" data-dock="work" aria-label="Work">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3z M9 7V4h6v3" /></svg>
-      </a>
+      <span class="dock__tip">Work</span></a>
       <a href="#lab" data-dock="lab" aria-label="Hardware lab">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7z M10 3v4 M14 3v4 M10 17v4 M14 17v4 M3 10h4 M3 14h4 M17 10h4 M17 14h4" /></svg>
-      </a>
+      <span class="dock__tip">Lab</span></a>
       <a href="#skills" data-dock="skills" aria-label="Capabilities">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16 M4 12h16 M4 18h10" /></svg>
-      </a>
+      <span class="dock__tip">Skills</span></a>
       <a href="#contact" data-dock="contact" aria-label="Contact">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" /></svg>
-      </a>
+      <span class="dock__tip">Contact</span></a>
     </nav>
 
     <script src="./assets/js/site.js" defer></script>
