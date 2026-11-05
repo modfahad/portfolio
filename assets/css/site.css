@@ -28,16 +28,15 @@
 
 /* Tokens */
 :root {
-  --paper: #f3f5f8;
+  --paper: #ffffff;
   --surface: #ffffff;
-  --ink: #18233a;
-  --muted: #566176;
-  --rule: #d6dce6;
-  --cobalt: #2747d6;
-  --cobalt-deep: #1b33a3;
-  --jade: #12866a;
-  --amber: #c27408;
-  --slate: #8a94a7;
+  --ink: #000000;
+  --muted: #555555;
+  --rule: #e3e3e3;
+  --red: #d71920;
+  --red-deep: #a50f15;
+  --grey: #6e6e6e;
+  --grey-light: #b5b5b5;
 
   --display: 'Bricolage', 'Public Sans', system-ui, sans-serif;
   --body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -86,16 +85,16 @@ img {
 }
 
 a {
-  color: var(--cobalt);
+  color: var(--red);
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
 }
 a:hover {
-  color: var(--cobalt-deep);
+  color: var(--red-deep);
 }
 
 :focus-visible {
-  outline: 3px solid var(--cobalt);
+  outline: 3px solid var(--red);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -134,8 +133,8 @@ a:hover {
   line-height: 1.2;
 }
 .btn:hover {
-  background: var(--cobalt);
-  border-color: var(--cobalt);
+  background: var(--red);
+  border-color: var(--red);
   color: #fff;
 }
 .btn--ghost {
@@ -244,7 +243,7 @@ a:hover {
 .hero__avatar img {
   width: clamp(8rem, 18vw, 13rem);
   border-radius: 50% 50% 1.5rem 1.5rem;
-  background: #dfe5f1;
+  background: #f0f0f0;
 }
 
 /* Career trace */
@@ -263,13 +262,13 @@ a:hover {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1.25rem;
-  border-bottom: 1px solid var(--rule);
+  background: var(--ink);
   font-family: var(--mono);
   font-size: 0.8125rem;
-  color: var(--muted);
+  color: #bdbdbd;
 }
 .trace__id {
-  color: var(--ink);
+  color: #fff;
 }
 .trace__axis {
   position: relative;
@@ -279,7 +278,7 @@ a:hover {
   border-bottom: 1px solid var(--rule);
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--slate);
+  color: var(--grey);
 }
 .trace__tick {
   position: absolute;
@@ -301,23 +300,23 @@ a:hover {
 }
 
 .span {
-  --c: var(--cobalt);
+  --c: var(--red);
   border-bottom: 1px solid var(--rule);
 }
 .span:last-child {
   border-bottom: 0;
 }
 .span--qnu {
-  --c: var(--cobalt);
+  --c: var(--red);
 }
 .span--kenko {
-  --c: var(--jade);
+  --c: var(--ink);
 }
 .span--intugine {
-  --c: var(--amber);
+  --c: var(--grey);
 }
 .span--edu {
-  --c: var(--slate);
+  --c: var(--grey-light);
 }
 
 .span__row {
@@ -332,10 +331,10 @@ a:hover {
   cursor: pointer;
 }
 .span__row:hover {
-  background: #f7f9fc;
+  background: #f7f7f7;
 }
 .span__row:focus-visible {
-  outline: 3px solid var(--cobalt);
+  outline: 3px solid var(--red);
   outline-offset: -3px;
 }
 .span__label {
@@ -367,7 +366,7 @@ a:hover {
   transform-origin: left center;
 }
 .span--edu .span__bar {
-  background: repeating-linear-gradient(-45deg, var(--c) 0 6px, #a9b1c1 6px 9px);
+  background: repeating-linear-gradient(-45deg, var(--c) 0 6px, #e6e6e6 6px 9px);
 }
 .span__live {
   position: absolute;
@@ -400,7 +399,7 @@ a:hover {
 .span__detail {
   padding: 0.25rem 1.25rem 1.5rem calc(var(--label-w) + 2.5rem);
   border-top: 1px dashed var(--rule);
-  background: #fbfcfe;
+  background: #fafafa;
 }
 .span__summary {
   max-width: 62ch;
@@ -421,7 +420,7 @@ a:hover {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.35rem 0;
-  border-bottom: 1px solid #edf0f5;
+  border-bottom: 1px solid #efefef;
 }
 .attrs dt {
   color: var(--muted);
@@ -512,7 +511,7 @@ a:hover {
   margin-bottom: 0.4rem;
 }
 .case__body li::marker {
-  color: var(--cobalt);
+  color: var(--red);
 }
 
 /* Skills */
@@ -558,7 +557,7 @@ a:hover {
 }
 .contact__lede {
   max-width: 44ch;
-  color: #c4cbda;
+  color: #bdbdbd;
   margin: 0 0 1.5rem;
 }
 .contact__email {
@@ -568,12 +567,12 @@ a:hover {
   font-size: clamp(1.6rem, 0.8rem + 3.6vw, 3rem);
   letter-spacing: -0.02em;
   color: #fff;
-  text-decoration-color: #6f86ff;
-  text-decoration-thickness: 2px;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 3px;
   overflow-wrap: anywhere;
 }
 .contact__email:hover {
-  color: #aebcff;
+  color: #ff5a5f;
 }
 .contact__links {
   display: flex;
@@ -584,14 +583,14 @@ a:hover {
   margin: 2rem 0 0;
 }
 .contact__links a {
-  color: #dfe5ff;
+  color: #ffffff;
   font-weight: 600;
 }
 .contact__links a:hover {
-  color: #fff;
+  color: #ff5a5f;
 }
 .contact :focus-visible {
-  outline-color: #aebcff;
+  outline-color: #ff5a5f;
 }
 
 .footer {
